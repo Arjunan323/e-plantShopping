@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
@@ -9,7 +9,7 @@ const CartItem = ({ onContinueShopping, setCartCount }) => {
 
   useEffect(() => {
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
-    setCartCount(totalQuantity); // 
+    setCartCount(totalQuantity); 
   }, [cart, setCartCount]);
 
   // Calculate total amount for all products in the cart
